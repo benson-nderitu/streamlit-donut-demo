@@ -26,19 +26,17 @@ with col1:
     label = st.text_input("Label", value="Sales Profit")
     current_value = st.slider("Current Value", min_value=0, max_value=1000, value=200)
     previous_value = st.slider("Previous Value", min_value=0, max_value=1000, value=180)
-    delta = delta_calculate(current_value, previous_value)
-    value = st.slider("Value", min_value=0, max_value=1000, value=200)
     outOf = st.slider("Out Of", min_value=0, max_value=1000, value=1000)
     units = st.text_input("Units", value="$")
     direction = st.selectbox(
         "Direction", options=["clockwise", "anticlockwise"], index=1
     )
-
+    delta = delta_calculate(current_value, previous_value)
     delta_placeholder = st.empty()
+    size = st.slider("Size", min_value=100, max_value=500, value=180)
 
 
 with col2:
-    size = st.slider("Size", min_value=100, max_value=500, value=180)
     text_size = st.slider("Text Size", min_value=10, max_value=100, value=50)
     space = st.slider("Space", min_value=0, max_value=50, value=30)
     delta_text_size = st.slider("Delta Text Size", min_value=10, max_value=50, value=18)
